@@ -1,0 +1,20 @@
+# update the system first
+sudo yum update –y
+# downloading the repo 
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+# key installation
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+# upgrade
+sudo yum upgrade
+#java installation
+sudo dnf install java-17-amazon-corretto -y
+# Install Jenkins:
+sudo yum install jenkins -y
+# service enabling
+sudo systemctl enable jenkins
+# Start Jenkins as a service:
+sudo systemctl start jenkins
+# checking status
+sudo systemctl status jenkins
+
